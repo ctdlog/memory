@@ -22,6 +22,16 @@ module.exports = {
     'no-unused-vars': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
     // 'arrow-body-style': ['error', 'always'],
     'react/function-component-definition': [
       2,
