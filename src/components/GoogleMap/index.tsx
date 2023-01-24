@@ -1,19 +1,12 @@
 /* global google */
 import { useEffect, useMemo, useState } from 'react';
 
-import styled from '@emotion/styled';
 import { GoogleMap, LoadScriptNext, MarkerF } from '@react-google-maps/api';
 import { collection, doc, getDocs, setDoc } from 'firebase/firestore';
 
+import * as S from '@/components/GoogleMap/index.styled';
 import { PUBLIC_GOOGLE_MAPS_API_KEY } from '@/constants/config';
 import db from '@/lib/firebase/firebase';
-
-const Wrapper = styled.div`
-  .map-container {
-    width: 100%;
-    height: 100vh;
-  }
-`;
 
 interface LatLng {
   lat: number;
@@ -50,7 +43,7 @@ const MapComponent = () => {
   }
 
   return (
-    <Wrapper>
+    <S.Wrapper>
       <LoadScriptNext googleMapsApiKey={PUBLIC_GOOGLE_MAPS_API_KEY}>
         <GoogleMap zoom={18} center={center} mapContainerClassName="map-container" onClick={handleClick}>
           {selected.map((position, index) => (
@@ -59,7 +52,7 @@ const MapComponent = () => {
           ))}
         </GoogleMap>
       </LoadScriptNext>
-    </Wrapper>
+    </S.Wrapper>
   );
 };
 
