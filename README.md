@@ -24,7 +24,7 @@
 "react-dom": "^18.2.0",
 "next": "12.3.1",
 "@emotion/react": "^11.10.4",
- "graphql": "^16.6.0"
+"graphql": "^16.6.0"
 "typescript": "^4.9.4",
 "axios": "^1.1.3",
 ```
