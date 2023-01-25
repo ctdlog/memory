@@ -1,4 +1,4 @@
-## Fire-Planner(Front-end)
+## Memory 
 
 ### 👥 Made By
 
@@ -9,8 +9,8 @@
   </tr>
   <tr>    
     <td align="center">
-      <a href="https://github.com/devyouth94">
-        <div>최형욱</div>
+      <a href="https://github.com/ctdlog">
+        <div>ctdlog</div>
       </a>
     </td>
   </tr>
@@ -35,4 +35,19 @@
 2. yarn
 3. yarn install
 4. yarn dev
+```
+
+### env
+```
+# Firebase firestore
+NEXT_PUBLIC_API_KEY=...
+NEXT_PUBLIC_AUTH_DOMAIN=...
+NEXT_PUBLIC_PROJECT_ID=...
+NEXT_PUBLIC_STORAGE_BUCKET=...
+NEXT_PUBLIC_MESSAGING_SENDER_ID=...
+NEXT_PUBLIC_APP_ID=...
+NEXT_PUBLIC_MEASUREMENT_ID=...
+
+# Google Maps API
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=...
 ```
