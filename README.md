@@ -1,5 +1,15 @@
 ## Memory 
 
+### Tasks
+- [ ] 햄버거 아이콘 및 로고를 포함한 헤더를 만든다.
+- [ ] Google Map API를 사용하여 헤더 아래에 지도로 화면 전체를 채운다.
+- [ ] ~~지도를 특정 좌표를 클릭하면 마커가 표시된다.~~
+- [ ] Firebase의 firestore DB를 연결한다.
+- [ ] 표시된 마커의 좌표를 Firestore DB에 저장한다.
+- [ ] 지도의 특정 좌표를 클릭하면 기록 생성 모달이 나타난다.
+
+---
+
 ### 👥 Made By
 
 <table>
@@ -38,7 +48,7 @@
 4. yarn dev
 ```
 
-### env
+### 🔒 env
 ```
 # Firebase firestore
 NEXT_PUBLIC_API_KEY=...
