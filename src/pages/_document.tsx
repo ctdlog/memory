@@ -6,6 +6,7 @@ const Document = () => (
       <meta name="description" content="Memory" />
     </Head>
     <body>
+      <div id="modal-root" />
       <Main />
       <NextScript />
     </body>

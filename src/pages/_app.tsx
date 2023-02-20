@@ -4,7 +4,6 @@ import type { AppProps } from 'next/app';
 
 const queryClient = new QueryClient();
 
-// eslint-disable-next-line arrow-body-style
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>

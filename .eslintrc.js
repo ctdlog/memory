@@ -50,5 +50,6 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
+    'react/require-default-props': 'off',
   },
 };
