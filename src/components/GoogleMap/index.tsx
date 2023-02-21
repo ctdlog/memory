@@ -12,7 +12,18 @@ import { useMarker } from './hooks';
 const MapComponent = () => {
   const center = useMemo(() => ({ lat: 37.54, lng: 127.04 }), []);
   const { value: isModalOpen, toggle: toggleModal } = useToggle(false);
+  const [currentPosition, setCurrentPosition] = useState({ lat: 0, lng: 0 });
   const { markers, createMarker } = useMarker();
+
+  // eslint-disable-next-line no-undef
+  const handleClick = (e: google.maps.MapMouseEvent) => {
+    if (!e.latLng) {
+      return;
+    }
+
+    setCurrentPosition({ lat: e.latLng.lat(), lng: e.latLng.lng() });
+    toggleModal();
+  };
 
   if (!PUBLIC_GOOGLE_MAPS_API_KEY) {
     throw new Error(
@@ -23,9 +34,8 @@ const MapComponent = () => {
   return (
     <S.Wrapper>
       <LoadScriptNext googleMapsApiKey={PUBLIC_GOOGLE_MAPS_API_KEY}>
-        <GoogleMap zoom={18} center={center} mapContainerClassName="map-container" onClick={toggleModal}>
+        <GoogleMap zoom={18} center={center} mapContainerClassName="map-container" onClick={handleClick}>
           {markers.map((position, index) => (
-            // eslint-disable-next-line react/no-array-index-key
             <MarkerF key={index} position={position} />
           ))}
         </GoogleMap>
@@ -34,6 +44,9 @@ const MapComponent = () => {
         <Modal>
           <Modal.Layout width={400}>
             <h1>이 장소에 남기고 기록하고 싶은 것을 작성해주세요.</h1>
+            <h2>
+              Position: x({currentPosition.lat}) y({currentPosition.lng})
+            </h2>
           </Modal.Layout>
           <Modal.Background onClick={toggleModal} />
         </Modal>
